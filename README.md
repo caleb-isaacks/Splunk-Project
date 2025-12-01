@@ -93,3 +93,6 @@ Recommended Actions
 - Block attacker IP at the network perimeter
 - Review /var/log/auth.log, /var/log/syslog, and user command history
 - Check for persistence (cron jobs, new users, SSH keys)
+
+
+<img width="1710" height="987" alt="image" src="https://github.com/user-attachments/assets/ff04c4a0-8671-4d25-80e8-ea90a4ea9c9d" />
