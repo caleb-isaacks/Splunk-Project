@@ -44,12 +44,15 @@ Environment: Splunk Enterprise (local VM install)
 ## Search Queries Used  
 
 ## 1. Failed Login Attempts  
+```spl
 index=auth_logs "Failed password"
-
-## 2. Successful Login Attempts 
+```
+## 2. Successful Login Attempts
+```spl
 index=auth_logs "Accepted password"
-
+```
 ## 3. Event Timeline
+```spl
 index=auth_logs ("Failed password" OR "Accepted password")
 | eval status=case(
     searchmatch("Failed password"), "Failed Login",
@@ -61,7 +64,7 @@ index=auth_logs ("Failed password" OR "Accepted password")
   )
 | table _time, src, user, status, attack_stage
 | sort _time
-
+```
 ## Summary of Timeline
 | Time        | Source IP     | User       | Status           | Attack Stage        |
 | ----------- | ------------- | ---------- | ---------------- | ------------------- |
